@@ -1,0 +1,218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5873,        208]
+NotebookOptionsPosition[      4891,        166]
+NotebookOutlinePosition[      5245,        182]
+CellTagsIndexPosition[      5202,        179]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["John Wesley McDonald Hayhurst", "Title",
+ CellChangeTimes->{{3.663598625790135*^9, 3.663598637813958*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Assignment 1"
+}], "Chapter",
+ CellChangeTimes->{{3.6635986487592278`*^9, 3.6635986624808607`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Part #1: Understanding Population Models", "Subchapter",
+ CellChangeTimes->{{3.66359868862648*^9, 3.6635987223134127`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "By hand, use Separation of Variables to find the general solution for the \
+equation ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dP", "dt"], TraditionalForm]],
+  FontColor->RGBColor[
+   0.7803921568627451, 0.4196078431372549, 0.1607843137254902]],
+ " = rP(t). Be sure to indicate if there are any singular solutions. Attached \
+is the by hand solution of the equation.  This is confirmed by mathematica "
+}], "Subsection",
+ CellChangeTimes->{{3.663598894059951*^9, 3.6635989529445343`*^9}, {
+   3.663599007564595*^9, 3.6635990293588457`*^9}, {3.663599084418201*^9, 
+   3.663599104171585*^9}, 3.6635995859620934`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"t_", ",", "P_"}], "]"}], "=", 
+  RowBox[{"r", "*", 
+   RowBox[{"P", "[", "t", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6635991087616262`*^9, 3.663599164170693*^9}}],
+
+Cell[BoxData[
+ RowBox[{"r", " ", 
+  RowBox[{"P", "[", "t", "]"}]}]], "Output",
+ CellChangeTimes->{3.6635991666003237`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"P", "'"}], "[", "t", "]"}], "\[Equal]", 
+    RowBox[{"f", "[", 
+     RowBox[{"t", ",", "P"}], "]"}]}], ",", 
+   RowBox[{"P", "[", "t", "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.66359916937749*^9, 3.663599175223469*^9}, {
+  3.663599306511036*^9, 3.663599371079318*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"P", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"r", " ", "t"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6635993735912113`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Assume that the birth rate is 3.24% and the death rate is 1.97%.  Find the \
+particular solution for the initial value problem given below\n",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dP", "dt"], TraditionalForm]],
+  FontColor->RGBColor[
+   0.7803921568627451, 0.4196078431372549, 0.1607843137254902]],
+ " = rP(t)\tP(0) = 6.084 "
+}], "Subsection",
+ CellChangeTimes->{{3.663599424541112*^9, 3.66359942827938*^9}, {
+  3.663599551186762*^9, 3.663599653786489*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"P", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"f", "[", 
+       RowBox[{"t", ",", "P"}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"P", "[", "0", "]"}], "\[Equal]", "6.084"}]}], "}"}], ",", 
+   RowBox[{"P", "[", "t", "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.663599692123453*^9, 3.663599737193036*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"P", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{"6.084`", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"r", " ", "t"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6635997379126387`*^9}]
+}, Open  ]],
+
+Cell["\<\
+This tells us that the constant for our model is 6.084, our r is equal to the \
+birth rate minus the death rate which we know are 3.24% and 1.97% percent \
+respectively giving us our r to be 1.27% or 0.0127. With this knowledge our \
+solution looks like this\
+\>", "Text",
+ CellChangeTimes->{{3.6635997595644627`*^9, 3.6635998517228193`*^9}, {
+  3.6635998929308567`*^9, 3.6635998975367107`*^9}, {3.66360001331113*^9, 
+  3.6636000562265797`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"P", "(", "t", ")"}], "=", 
+   RowBox[{"6.084", 
+    SuperscriptBox["e", 
+     RowBox[{"0.0127", "t"}]]}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.6636000707616053`*^9, 3.663600123614972*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 112, 1, 92, "Title"],
+Cell[CellGroupData[{
+Cell[717, 27, 166, 5, 65, "Chapter"],
+Cell[CellGroupData[{
+Cell[908, 36, 129, 1, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[1062, 41, 635, 13, 76, "Subsection"],
+Cell[CellGroupData[{
+Cell[1722, 58, 223, 6, 28, "Input"],
+Cell[1948, 66, 122, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2107, 74, 373, 10, 28, "Input"],
+Cell[2483, 86, 301, 9, 35, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2833, 101, 480, 11, 76, "Subsection"],
+Cell[CellGroupData[{
+Cell[3338, 116, 453, 13, 28, "Input"],
+Cell[3794, 131, 275, 8, 35, "Output"]
+}, Open  ]],
+Cell[4084, 142, 455, 8, 49, "Text"],
+Cell[4542, 152, 297, 8, 31, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
